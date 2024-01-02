@@ -1,0 +1,49 @@
+{
+    "configurations": [
+        {
+            // Main run program
+            // You only want to run this command
+            // To change the file to execute, change the name in "dependsOn"
+            "type": "command",
+            "name": "run",
+            "dependsOn": [
+                "es1"
+            ],
+            // <-- change this field
+            "program": "$PROJECT_DIR$/solution",
+        },
+
+        //copy this command below, change the "name", and the source file in "args"
+        {
+            "type": "command",
+            "name": "es1",
+            // <-- change name, has to be the same of the "depensOn" in the 'run' command
+            "program": "/usr/bin/gcc",
+            "args": [
+                "$PROJECT_DIR$/es1.c",
+                "-std=c99",
+                "-O2",
+                "-o",
+                "$PROJECT_DIR$/solution"
+            ],
+            // <-- change the source file with the name of your file
+        },
+
+        // Example command below
+        {
+            "type": "command",
+            "name": "es2",
+            "program": "/usr/bin/gcc",
+            "args": [
+                "$PROJECT_DIR$/es2.c",
+                "-std=c99",
+                "-O2",
+                "-o",
+                "$PROJECT_DIR$/solution"
+            ],
+        },
+
+        //You can create as many commands as you like, and only change the "depensOn" field in the "run" command
+
+    ]
+}
